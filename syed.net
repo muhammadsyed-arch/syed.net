@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K S Mahammad's CV</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        h2 {
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .contact-info, .personal-details {
+            background: #ecf0f1;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .contact-info a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>K S Mahammad</h1>
+        <div class="contact-info">
+            <p><strong>Email:</strong> <a href="mailto:syedmahammad361@gmail.com">syedmahammad361@gmail.com</a></p>
+            <p><strong>Mobile:</strong> +91-7386823641</p>
+        </div>
+
+        <div class="section">
+            <h2>Objective</h2>
+            <p>Seeking a position in a dynamic organization with a stimulating environment to utilize my knowledge and education in meeting global challenges while delivering exceptional performance.</p>
+        </div>
+
+        <div class="section">
+            <h2>Summary</h2>
+            <ul>
+                <li>1.9 years of experience in Linux Administration and Server Support.</li>
+                <li>Dedicated Linux Administrator with strong troubleshooting skills and efficient server support.</li>
+                <li>Experienced in installation, administration, and maintenance of Linux systems.</li>
+                <li>Providing 24x7 support to customers to ensure system reliability.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <p>Bachelor of Commerce (B. Com Computer Applications) from Sri Krishnadevaraya University, Anantapur.</p>
+        </div>
+
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <ul>
+                <li><strong>Operating Systems:</strong> Red Hat Linux, Windows</li>
+                <li><strong>Services:</strong> NTP, NFS, HTTP, SSH</li>
+                <li><strong>Disk Management:</strong> Linux LVM</li>
+                <li><strong>Ticketing Tools:</strong> ServiceNow, Jira</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Professional Experience</h2>
+            <h3>HCL</h3>
+            <p><strong>Designation:</strong> Linux System Administrator</p>
+            <p><strong>Period:</strong> June 2022 to Present</p>
+            <h4>Current Project:</h4>
+            <p>Administrating over 800+ servers, including installation, configuration, maintenance, and troubleshooting of various Linux services.</p>
+            <h4>Roles & Responsibilities:</h4>
+            <ul>
+                <li>The project involves 24/7 support for more than 800 production servers built on RHEL 6/7/8 Operating platforms</li>
+                <li>Doing basic activities like move/copy/delete of files and changing of file permissions</li>
+                <li>Working on User and Group Management like creating, deleting, modifying users and password reset, changing the parameters of users, creating groups etc</li>
+                <li>Assigning super user privileges for the normal user's by SUDO</li>
+                <li>Security implementation by using ACL's & special file permissions</li>
+                <li>Working on Management parted Partition a Disk like Creating, Removing, Updating, and Formatting, mounting Partitions as Permanent.</li>
+                <li>Working on Management Creation, Modification and Reducing of LVMs.</li>
+                <li>Working on SWAP Management like creating, removing, formatting with file system and mounting.</li>
+                <li>Job Scheduling and Automating process using CRON & AT<li>
+                <li>Working on Package Management like installing, removing, updating the packages through RPM and YUM tools.<li>
+                <li>Performing Remote administration through ssh<li>
+                <li>Configuring the Samba in the servers to make the Linux files accessible on windows environment.<li>
+                <li>Configuring and managing NFS in the Server and client side<li> 
+                <li>Performed internal Backups and Restores by using Tar like compress, extract, zip, unzip.<li>
+                <li>Performance monitoring using TOP & PS commands. Handling various types of request tickets, Incident tickets<li>
+                <li>Attending meetings with clients to understand and fulfill their demands.<li>
+                <li>Troubleshoot the Issues in single user mode.<li>
+                <li>Given end to end support for the customers<li>    				
+            </ul>
+        </div>
+
+        <div class="personal-details">
+            <h2>Personal Details</h2>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Date of Birth:</strong> 03/04/1996</p>
+            <p><strong>Marital Status:</strong> Unmarried</p>
+            <p><strong>Languages:</strong> English, Telugu, Hindi</p>
+        </div>
+
+        <div class="section">
+            <h2>Declaration</h2>
+            <p>I hereby declare that the information furnished above is true to the best of my knowledge.</p>
+        </div>
+    </div>
+
+</body>
+</html>
+
