@@ -1,0 +1,79 @@
+Resources:
+  # Create a VPC
+  PrivateVPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+      EnableDnsHostnames: true
+  # Create InternetGateway 
+  PrivateInternetGateway:
+    Type: AWS::EC2::InternetGateway
+  # Attach InternetGateway to VPC
+  # Attach Internet Gateway to VPC
+  VPCGatewayAttachment:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: !Ref PrivateVPC
+      InternetGatewayId: !Ref PrivateInternetGateway
+  # Create a Public subnet
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref PrivateVPC
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: ap-south-1b
+      MapPublicIpOnLaunch: true
+  # Craete a Private subnet
+  PrivateSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref PrivateVPC
+      CidrBlock: 10.0.2.0/24
+      AvailabilityZone: ap-south-1b
+  # Craete a Route Table for PublicSubnet
+  MyPublicRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref PrivateVPC
+  # Route InternetGatway
+  MyPublicRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref MyPublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref PrivateInternetGateway
+  # Associate Public subnet With RouteTable
+  MyPublicSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PublicSubnet
+      RouteTableId: !Ref MyPublicRouteTable
+  # NAT Gateway (Optional, if you need outbound internet access from the private subnet)
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+  MyNatGateway:
+    Type: AWS::EC2::NatGateway
+    Properties:
+      AllocationId: !GetAtt MyEIP.AllocationId
+      SubnetId: !Ref PublicSubnet
+  # Route Table for Private Subnet
+  MyPrivateRouteTable:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref PrivateVPC
+  # Route for Private Subnet to NAT Gateway
+  MyPrivateRoute:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref MyPrivateRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref MyNatGateway
+  # Associate Private Subnet with Route Table
+  MyPrivateSubnetRouteTableAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      SubnetId: !Ref PrivateSubnet
+      RouteTableId: !Ref MyPrivateRouteTable
